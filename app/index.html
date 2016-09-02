@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
+</head>
+<body>
+
+  <div ng-controller="users">
+      <display-Users></display-Users>
+      <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Edit User</h3>
+        </div>
+        <div class="modal-body">
+          <form name="userForm" >
+              <input type="hidden" name="user_id" ng-value="message">
+              <div class="form-group">
+                <label class="control-label">User Name</label>
+                <input type="text" class="form-control" ng-model="user_name" ng-value="message1" required placeholder="Name" />
+              </div>
+              <div class="form-group">
+                <label class="control-label">Email</label>
+                <input type="email" class="form-control" ng-model="user_email"  ng-value="message2" required placeholder="Email" />
+              </div>
+          </form>
+             <!-- User Id :: {{message}}<br/>
+             User Name :: {{message1}}<br/>
+             User Email :: {{message2}} --> 
+             <!--    ng-model = "edit_user_email"
+                ng-model = "edit_user_name" -->
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">ok</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+      </script>
+  </div>
+
+
+  <!-- <div ng-controller="my_modal">
+      <button class="btn btn-primary" ng-click="custom_modal()">Open Modal</button>
+      <script type="text/ng-template" id="myModalContent1.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Demo Modal</h3>
+        </div>
+        <div class="modal-body">
+           Demo Modal
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">Update</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+  </div> -->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="js/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  <script src="js/ui-bootstrap.js"></script>
+
+</body>
+</html>

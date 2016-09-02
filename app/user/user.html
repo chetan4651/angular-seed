@@ -1,0 +1,27 @@
+
+<div style="padding: 3%;float: right;">
+	
+	Name :: <input type="text" name="user_name" ng-model = "user_name" id="user_name" autofocus="" required=""/> 
+	Email :: <input type="email" name="user_email" ng-model = "user_email" id="user_email" required="" / > 
+	<button class="btn btn-primary" ng-click="add_user()">Add User</button>
+</div>
+
+<div style="padding-left: 5%;padding-right: 3%;">
+<table class="table table-striped">
+		<tr>
+			<th>User Id</th> 
+			<th>User Name</th> 
+			<th>User Email</th> 
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat="x in user_data">
+			<td>{{x.user_id}}</td>
+			<td>{{x.user_name}}</td>
+			<td>{{x.user_email}}</td>
+			<td>
+				<a href="" ng-click="delete_user(x)"><i style="color: red;" class="glyphicon glyphicon-trash"></i></a>
+				<button class="btn btn-primary" ng-click="edit_modal(x)">Edit</button>
+			</td>
+		</tr>
+</table>
+</div>
